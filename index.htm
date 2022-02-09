@@ -1,0 +1,230 @@
+<html>
+<title>JuiceBox</title>
+<link rel="icon" type="image/x-icon" href="logo.png" />
+<script>
+function goBack() {
+  window.history.back()
+}
+function location.reload(); {
+  window.location.reload()
+}
+function goForward() {
+  window.history.forward()
+}
+</script>
+
+<style>
+h1 {
+color:white;
+font-size:100px;
+}
+
+h4 {
+color:white;
+position:absolute;
+margin-top:-100px;
+margin-right:467px;
+left:500px;
+}
+
+h5 {
+color:white;
+position:absolute;
+margin-top:-75px;
+margin-right:370px;
+left:550px;
+}
+body {
+font-family:Arial;
+background-image: url('nature1.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+
+ul {
+  position: fixed;
+  top: 0;
+  width: 100%;
+} 
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border:2px solid transparent;
+}
+
+li a:hover:not(.active) {
+   display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border:2px solid white;
+}
+
+
+
+#navbtn {
+  float: left;
+}
+
+#navbtn {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border:2px solid transparent;
+  background-color:transparent;
+}
+
+#navbtn:hover:not(.active) {
+   display: block;
+  color: darkgrey;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  cursor:pointer;
+}
+
+
+#navbt {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 12px 14px;
+  text-decoration: none;
+  border:2px solid transparent;
+  background-color:transparent;
+  position:absolute;
+  top:2;
+ font-size:13px;
+}
+
+#navbt:hover:not(.active) {
+   display: block;
+  color: darkgrey;
+  text-align: center;
+  padding: 12px 14px;
+  text-decoration: none;
+  border:2px solid transparent;
+  background-color:transparent;
+  position:absolute;
+  top:2;
+ font-size:13px;
+}
+
+
+
+
+.burner {
+     position: absolute;
+  left: -22px;
+  top:46%;
+  height:1%;
+
+  background-color:transparent;
+  border:none;
+}
+
+#file {
+position:fixed;
+top:630;
+left:5;
+
+
+}
+
+</style>
+<head>
+<ul>
+<li>
+<button onclick="history.back()" id="navbtn">Back</button>
+</li>
+
+<li>
+<button onclick="location.reload();" id="navbtn">Refresh</button>
+</li>
+
+
+<li>  
+<button onclick="history.forward()" id="navbtn">Forward</button>
+</li>
+<li>
+​​​​<a href="https://aseql.github.io/JuiceBox/" target="_blank" id="navbt">New Tab</a>
+</li>
+</ul>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+      $(document).ready(function(){
+             $("#file").change(function(){
+                   var length=this.files.length;
+                        if(!length){
+                          return false;
+                         }
+                        changeBackground(this);
+                });
+       });
+     
+      // Creating the function
+      function changeBackground(img){
+            var file = img.files[0];
+            var imagefile = file.type;
+            var match= ["image/jpeg","image/png","image/jpg"];
+                  if(!((imagefile==match[0]) || (imagefile==match[1]) || (imagefile==match[2]))){
+                        alert("Invalid File Extension");
+                  }else{
+                        var reader = new FileReader();
+                        reader.onload = imageIsLoaded;
+                        reader.readAsDataURL(img.files[0]);
+                  }
+            function imageIsLoaded(e) {
+                  $('body').css({ 'background-image': "url(" + e.target.result + ")" });
+           
+                  }     
+            }
+</script>
+
+<input type="file" name="" id="file" value="Click">
+
+
+ 
+</ul>
+</head>
+<body>
+<center>
+<br>
+<br>
+<br>
+<br>
+  <br>
+  <br>
+  <br>
+<img src="tbg.png">
+
+<div class="burner">
+
+<script async src="https://cse.google.com/cse.js?cx=a9bb6df3d304d9039"></script>
+<div id="cse"  style="width: 50%; margin-top:180 auto "> 
+<div class="gcse-search"></div>
+</div>
+</center>
+</body>
+</html>
